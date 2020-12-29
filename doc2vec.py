@@ -26,7 +26,7 @@ class Doc2VecModel:
         documents = [TaggedDocument(r, [i]) for i, r in enumerate(word_tokens)]
         self.model.build_vocab(documents)
         self.model.train(documents, total_examples=len(documents), epochs=10)
-        print('Done!')
+        print('Done!\n')
 
     def to_vector(self, doc: str) -> np.ndarray:
         tokens = word_tokenize(doc)
