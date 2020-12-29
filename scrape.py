@@ -5,6 +5,9 @@ import re
 
 
 def clean_review(t: str):
+    """
+    replace and remove certain characters in Yelp reviews
+    """
     t = re.sub("(&amp;#39;)+", "'", t)
     t = re.sub("(<br&gt;)+", " ", t)
     t = re.sub("\xa0", "", t)
