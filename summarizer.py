@@ -27,17 +27,17 @@ def cost_func(document: str) -> int:
 class Summarizer:
     """
     Overview:
-
     An abstractive summarizer that uses a lazy greedy algorithm with a max heap to efficiently find the most
     semantically representative documents from a large corpus of documents.
 
+    Example usage:
+    summarizer = Summarizer(['hi there', 'hello how are you'], sim_metric='doc2vec')
+    res = summarizer.summarize(budget=0.05)
 
     References:
-
     1. Lin, Hui, and Jeff Bilmes. "Multi-document summarization via budgeted maximization of submodular functions."
     Human Language Technologies: The 2010 Annual Conference of the North American Chapter of the Association for
     Computational Linguistics. 2010.
-
     2. homes.cs.washington.edu/~marcotcr/blog/
     """
 
