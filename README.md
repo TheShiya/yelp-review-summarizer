@@ -7,6 +7,11 @@ This is an extension of an academic research project: https://github.com/TheShiy
 
 These tools help you to scrape and summarizes Yelp reviews for any business! Works best if there are at least a few hundred reviews.
 
+Content:
+* summarizer.py - contains the main summarization algorithm
+* doc2vec.py - contains a doc2vec model that computes pairwise review similarity
+* scrape.py - scrapes real reviews from any Yelp business page
+
 #### Usage
 
 The following example scrapes 3 pages of reviews (60 reviews) from Omar's Mediterranean Cuisine. The summarizer will use doc2vec-based pairwise similarity between reviews, and the output will contain reviews with at most 500 characters in total.
