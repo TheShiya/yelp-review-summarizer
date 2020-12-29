@@ -27,8 +27,6 @@ results = summarizer.summarize(budget=budget)
 ```
 ### Sample output:
 ```Python
-Sample output reviews:
-
 1: omar? more like o man. love their stuff. my go-to is the chicken platter with falafel and eggplant salad. the eggplant salad is literally so so delicious, especially if you dip the pita bread in it. they make the falafels fresh (as in when you order, they scoop some of the falafel mix into the deep fryer). the portion is huge so you can split it up into two meals if you want, and they also give you a free baklava with every takeout order! i love baklava's and this tiny dessert after a delish meal is the perfect finishing touch.
 
 2: i ordered the shawarma platter with some baba ganoush and mediterranean rice. it came with a side of baklava and lots of nice sauces (garlic, hot sauce). the food was yummy and the service was great. i def plan on reordering!
