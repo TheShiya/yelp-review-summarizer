@@ -32,7 +32,7 @@ class Summarizer:
 
     Example usage:
     summarizer = Summarizer(['hi there', 'hello how are you'], sim_metric='doc2vec')
-    res = summarizer.summarize(budget=0.05)
+    res = summarizer.summarize(budget=0.1)  # returns document no longer than 10% of total length
 
     References:
     1. Lin, Hui, and Jeff Bilmes. "Multi-document summarization via budgeted maximization of submodular functions."
@@ -50,16 +50,15 @@ class Summarizer:
 
         # Gensim's doc2vec will be significant slower and more interesting than jaccard
         if sim_metric == "doc2vec":
-            print("Initializing and training gensim Doc2Vec...", end=" ")
-            d2v = Doc2VecModel().train_model(documents)
-            print("Done.")
-            self.sim_func = d2v.similarity
+            d2v = Doc2VecModel()
+            d2v.train_model(documents)
+            self.sim_func = d2v.pairwise_similarity
         elif sim_metric == "jaccard":
             self.sim_func = jaccard_index
         else:
             assert sim_metric in ["doc2vec", "jaccard"]
 
-    def _compute_pairwise_similarities(self):
+    def _compute_pairwise_similarities(self) -> np.ndarray:
         """
         Computes pairwise document similarity using the specified similarity metric
         :return: n x n numpy array, where n is the number of documents
@@ -86,7 +85,7 @@ class Summarizer:
             budget = int(budget * sum(cost_func(x) for x in self.documents))
         else:
             budget = budget
-        print("Settings: budget={}, r={}, lambda={}\n".format(budget, r, lambda_))
+        print("Settings: budget={}, r={}, lambda={}".format(budget, r, lambda_))
 
         # Computes gain in objective function with new addition
         def _gain(item, f, o, c):
@@ -98,7 +97,7 @@ class Summarizer:
             red = sum([sum([sim[i, j] for i in (set(s) - {j})]) for j in set(s)])
             return cut - lambda_ * red
 
-        print("Starting summarization...", end=" ")
+        print("Starting summarization...")
         start = time.time()
 
         n = len(self.documents)

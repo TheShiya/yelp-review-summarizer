@@ -4,7 +4,7 @@ import requests
 import re
 
 
-def clean_review(t: str):
+def clean_review(t: str) -> str:
     """
     replace and remove certain characters in Yelp reviews
     """
