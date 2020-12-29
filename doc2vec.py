@@ -22,6 +22,5 @@ class Doc2VecModel:
     def similarity(self, doc, other_doc):
         tokens = word_tokenize(doc)
         other_tokens = word_tokenize(other_doc)
-        return norm(
-            self.model.infer_vector(tokens) - self.model.infer_vector(other_tokens)
-        )
+        diff = self.model.infer_vector(tokens) - self.model.infer_vector(other_tokens)
+        return 1 / norm(diff)
