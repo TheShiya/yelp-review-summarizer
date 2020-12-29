@@ -27,10 +27,10 @@ def get_reviews(url: str, max_pages: int = 2) -> List[str]:
     :param max_pages: maximum number of pages to scrape (20 reviews per page as of 12/28/2020)
     :return: list of review strings
     """
-    print('Scraping {} pages of reviews from:\n{}'.format(max_pages,  url))
+    print("Scraping {} pages of reviews from:\n{}".format(max_pages, url))
     reviews_all = []
     for i in range(0, max_pages):
-        curr_url = '{} ?start={}'.format(url, i * 20) if i > 0 else url
+        curr_url = "{} ?start={}".format(url, i * 20) if i > 0 else url
         response = requests.get(curr_url)
         soup = BeautifulSoup(response.text, features="lxml")
         script_sections = soup.findAll("script")
@@ -45,5 +45,5 @@ def get_reviews(url: str, max_pages: int = 2) -> List[str]:
         reviews = [r["comment"]["text"] for r in reviews]
         reviews = [clean_review(r) for r in reviews]
         reviews_all += reviews
-    print('Downloaded {} reviews\n'.format(len(reviews_all)))
+    print("Downloaded {} reviews\n".format(len(reviews_all)))
     return reviews_all

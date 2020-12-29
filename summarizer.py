@@ -130,5 +130,5 @@ class Summarizer:
         if _f({v_star}) >= _f(output):
             output = {v_star}
 
-        print("Done. Took {:.1f}s.".format(time.time() - start))
+        print("Done. Took {:.1f}s.\n".format(time.time() - start))
         return [self.documents[doc] for doc in output]
