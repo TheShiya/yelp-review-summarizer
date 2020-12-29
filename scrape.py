@@ -18,7 +18,11 @@ def clean_review(t: str) -> str:
 def get_reviews(url: str, max_pages: int = 2) -> List[str]:
     """
     Scrapes and cleans users review from Yelp.com.
-    Note: url needs to be
+
+    Example usage:
+    url = 'https://www.yelp.com/biz/omars-mediterranean-cuisine-new-york-2'
+    reviews = get_reviews(url, max_pages=4)
+
     :param url: url to the business page, e.g. "https://www.yelp.com/biz/china-jade-new-york-2"
     :param max_pages: maximum number of pages to scrape (20 reviews per page as of 12/28/2020)
     :return: list of review strings
@@ -40,4 +44,5 @@ def get_reviews(url: str, max_pages: int = 2) -> List[str]:
         reviews = [r["comment"]["text"] for r in reviews]
         reviews = [clean_review(r) for r in reviews]
         reviews_all += reviews
+    print('Found {} reviews from:\n{}'.format(len(reviews_all), url))
     return reviews_all
