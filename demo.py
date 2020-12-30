@@ -3,10 +3,10 @@ from doc2vec import Doc2VecModel
 from scrape import get_reviews
 
 
-DEFAULT_URL = "https://www.yelp.com/biz/omars-mediterranean-cuisine-new-york-2"
+DEMO_URL = "https://www.yelp.com/biz/omars-mediterranean-cuisine-new-york-2"
 
 
-def main(url: str = DEFAULT_URL, max_pages: int = 3):
+def main(url: str = DEMO_URL, max_pages: int = 3):
     print("* Multi-document Summarizer Demonstration *\n")
     reviews = get_reviews(url, max_pages=max_pages)
     summarizer = Summarizer(reviews, sim_metric="doc2vec")

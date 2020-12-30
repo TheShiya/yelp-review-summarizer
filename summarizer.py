@@ -27,7 +27,7 @@ def cost_func(document: str) -> int:
 class Summarizer:
     """
     Overview:
-    An abstractive summarizer that uses a lazy greedy algorithm with a max heap to efficiently find the most
+    An extractive summarizer that uses a lazy greedy algorithm with a max heap to efficiently find the most
     semantically representative documents from a large corpus of documents.
 
     Example usage:
