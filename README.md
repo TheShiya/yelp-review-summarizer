@@ -1,6 +1,6 @@
 # Yelp Review Summarizer
 
-This is an extension of an academic research project: https://github.com/TheShiya/text-summarization-project/
+Note: this is an extension of an academic research project: https://github.com/TheShiya/text-summarization-project/
 
 
 #### Overview
