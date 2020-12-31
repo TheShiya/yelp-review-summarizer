@@ -1,16 +1,19 @@
 # Yelp Review Summarizer
+### Comes with an asynchronous review scraper!
 
-Note: this is an extension of an academic research project: https://github.com/TheShiya/text-summarization-project/
+<img src="banner.png" alt="art" width="630"/>
+
+
 
 
 #### Overview
 
-These tools help you to scrape and summarizes Yelp reviews for any business! Works best if there are at least a few hundred reviews.
+These tools help you to scrape and summarizes Yelp reviews for any business! Works best if there are at least a few hundred reviews. Note: this is a spin-off from an academic research project: https://github.com/TheShiya/text-summarization-project/
 
 #### Content
 * summarizer.py - contains the main summarization algorithm
 * doc2vec.py - contains a doc2vec model that computes pairwise review similarity
-* scrape.py - scrapes real reviews from any Yelp business page
+* scraper.py - contains an asynchronous Yelp scraper that scrapes real reviews from any Yelp business page
 
 #### Usage
 
@@ -18,20 +21,20 @@ The following example scrapes 3 pages of reviews (60 reviews) from Omar's Medite
 
 ```Python
 url = "https://www.yelp.com/biz/omars-mediterranean-cuisine-new-york-2"
-max_pages = 3
+n_pages = 2
 budget = 500
 
-reviews = get_reviews(url, max_pages=max_pages)
+scraper = YelpScraper(url)
+reviews = scraper.scrape(n_pages)
 summarizer = Summarizer(reviews, sim_metric="doc2vec")
 results = summarizer.summarize(budget=budget)
 ```
 #### Sample output
 ```Python
-1: omar? more like o man. love their stuff. my go-to is the chicken platter with falafel and eggplant salad. the eggplant salad is literally so so delicious, especially if you dip the pita bread in it. they make the falafels fresh (as in when you order, they scoop some of the falafel mix into the deep fryer). the portion is huge so you can split it up into two meals if you want, and they also give you a free baklava with every takeout order! i love baklava's and this tiny dessert after a delish meal is the perfect finishing touch.
+1: just picked up food from them yesterday and couldn't be happier, a platter comes with two sides and a salad. also added pita and baklava. food was fresh and delicious, they fried the falafel right there. one of the best mediterranean cuisine in new york!
 
-2: i ordered the shawarma platter with some baba ganoush and mediterranean rice. it came with a side of baklava and lots of nice sauces (garlic, hot sauce). the food was yummy and the service was great. i def plan on reordering!
+2: damn good. i was in the area for a hair salon appointment and almost missed this. the food is amazing. great quality, ingredients, very filling and delicious. i highly recommend!!!
 
-3: i came here during lunch hours. i have had better mediterranean food elsewhere. for instance in long island city, and in queens. the food in here is acceptable, but imo not worth for the price. perhaps because it is located in manhattan. i liked the dessert. it was fresh, tasty, and crunchy
 ```
 
 ### Reference
