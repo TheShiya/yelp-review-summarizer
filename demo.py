@@ -1,19 +1,18 @@
+from scraper import YelpScraper
 from summarizer import Summarizer
-from doc2vec import Doc2VecModel
-from scrape import get_reviews
 
+"""
+A simple demonstration of the YelpScraper and Summarizer objects
+"""
 
-DEMO_URL = "https://www.yelp.com/biz/omars-mediterranean-cuisine-new-york-2"
-
-
-def main(url: str = DEMO_URL, max_pages: int = 3):
+if __name__ == "__main__":
     print("* Multi-document Summarizer Demonstration *\n")
-    reviews = get_reviews(url, max_pages=max_pages)
+    url = 'https://www.yelp.com/biz/omars-mediterranean-cuisine-new-york-2'
+    n_pages = 2
+
+    scraper = YelpScraper(url)
+    reviews = scraper.scrape(n_pages)
     summarizer = Summarizer(reviews, sim_metric="doc2vec")
     results = summarizer.summarize(budget=0.1)
     print('-----------------\nSample output reviews:\n')
-    [print("{}: {}\n".format(i + 1, res)) for i, res in enumerate(results[:5])]
-
-
-if __name__ == "__main__":
-    main()
+    [print("{}: {}\n".format(i + 1, res)) for i, res in enumerate(results[:3])]
