@@ -12,7 +12,7 @@ These tools help you to scrape and summarizes Yelp reviews for any business! Wor
 
 ### Usage
 
-The following example scrapes 3 pages of reviews (60 reviews) from Omar's Mediterranean Cuisine. The summarizer will use doc2vec-based pairwise similarity between reviews, and the output will contain reviews with at most 500 characters in total.
+The following example scrapes 3 pages of reviews (60 reviews) from Omar's Mediterranean Cuisine. The summarizer uses doc2vec pairwise similarity between reviews, and the output reviews contains at most 500 characters.
 
 ```Python
 url = "https://www.yelp.com/biz/omars-mediterranean-cuisine-new-york-2"
