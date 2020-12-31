@@ -2,7 +2,7 @@
 
 <img src="banner.png" alt="art" width="630"/>
 
-### Also comes with an asynchronous review scraper!
+#### *Comes with an asynchronous review scraper!*
 
 #### Overview
 
