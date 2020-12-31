@@ -6,7 +6,10 @@
 
 #### *Comes with an asynchronous review scraper!*
 
-These tools help you to scrape and summarizes Yelp reviews for any business! Works best if there are at least a few hundred reviews.
+
+### Overview
+
+An extractive summarizer that picks out semantically representative documents from a corpus. Works best if there are at least a few hundred reviews. This Python implementation included a heap to further improve the efficient of the original greedy algorithm (Lin & Blimes 2010).
 
 ### Usage
 
