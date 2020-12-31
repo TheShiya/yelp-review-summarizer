@@ -1,6 +1,8 @@
 # Yelp Review Summarizer
 
-<img align="center", src="banner.png" alt="art" width="630"/>
+<p align="center">
+<img src="banner.png" alt="art" width="630"/>
+</p>
 
 #### *Comes with an asynchronous review scraper!*
 
@@ -35,4 +37,4 @@ results = summarizer.summarize(budget=budget)
 * scraper.py - contains an asynchronous Yelp scraper that scrapes real reviews from any Yelp business page
 
 ### Reference
-Bilmes & Lin (2010)](https://www.aclweb.org/anthology/N10-1134.pdf)
+[Bilmes & Lin (2010)](https://www.aclweb.org/anthology/N10-1134.pdf)
