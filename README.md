@@ -37,4 +37,4 @@ results = summarizer.summarize(budget=budget)
 * scraper.py - contains an asynchronous Yelp scraper that scrapes real reviews from any Yelp business page
 
 ### Reference
-[Bilmes & Lin (2010)](https://www.aclweb.org/anthology/N10-1134.pdf)
+[Lin, Hui, and Jeff Bilmes. "Multi-document summarization via budgeted maximization of submodular functions." Human Language Technologies: The 2010 Annual Conference of the North American Chapter of the Association for Computational Linguistics. 2010.](https://www.aclweb.org/anthology/N10-1134.pdf)
