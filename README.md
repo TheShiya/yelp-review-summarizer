@@ -1,10 +1,12 @@
-# Yelp Review Summarizer
+## Yelp Review Summarizer
+
 
 <p align="center">
 <img src="banner.png" alt="art" width="630"/>
 </p>
 
-#### *Comes with an asynchronous review scraper!*
+#### *Also comes with an asynchronous review scraper!*
+
 
 
 ### Overview
