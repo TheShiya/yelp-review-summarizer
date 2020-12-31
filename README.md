@@ -1,6 +1,6 @@
 # Yelp Review Summarizer
 
-<img src="banner.png" alt="art" width="630"/>
+<img align="center", src="banner.png" alt="art" width="630"/>
 
 #### *Comes with an asynchronous review scraper!*
 
