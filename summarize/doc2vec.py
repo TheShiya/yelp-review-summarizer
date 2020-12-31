@@ -5,7 +5,11 @@ import numpy as np
 from gensim.models.doc2vec import TaggedDocument, Doc2Vec
 from numpy.linalg import norm
 
-nltk.download("punkt")
+try:
+    nltk.data.find('tokenizers/punkt')
+except LookupError:
+    nltk.download('punkt')
+
 DEFAULT_PARAMS = dict(vector_size=99, window=5, min_count=1, workers=4)
 
 
