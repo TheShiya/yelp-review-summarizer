@@ -1,8 +1,9 @@
 # Yelp Review Summarizer
-### Comes with an asynchronous review scraper!
+### Also comes with an asynchronous review scraper!
+
+
 
 <img src="banner.png" alt="art" width="630"/>
-
 
 
 
