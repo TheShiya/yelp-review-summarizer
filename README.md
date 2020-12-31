@@ -4,16 +4,11 @@
 
 #### *Comes with an asynchronous review scraper!*
 
-#### Overview
+### Overview
 
 These tools help you to scrape and summarizes Yelp reviews for any business! Works best if there are at least a few hundred reviews. Note: this is a spin-off from an academic research project: https://github.com/TheShiya/text-summarization-project/
 
-#### Content
-* summarizer.py - contains the main summarization algorithm
-* doc2vec.py - contains a doc2vec model that computes pairwise review similarity
-* scraper.py - contains an asynchronous Yelp scraper that scrapes real reviews from any Yelp business page
-
-#### Usage
+### Usage
 
 The following example scrapes 3 pages of reviews (60 reviews) from Omar's Mediterranean Cuisine. The summarizer will use doc2vec-based pairwise similarity between reviews, and the output will contain reviews with at most 500 characters in total.
 
@@ -27,13 +22,17 @@ reviews = scraper.scrape(n_pages)
 summarizer = Summarizer(reviews, sim_metric="doc2vec")
 results = summarizer.summarize(budget=budget)
 ```
-#### Sample output
+### Sample output
 ```Python
 1: just picked up food from them yesterday and couldn't be happier, a platter comes with two sides and a salad. also added pita and baklava. food was fresh and delicious, they fried the falafel right there. one of the best mediterranean cuisine in new york!
 
 2: damn good. i was in the area for a hair salon appointment and almost missed this. the food is amazing. great quality, ingredients, very filling and delicious. i highly recommend!!!
-
 ```
 
-#### Reference
+### Content
+* summarizer.py - contains the main summarization algorithm
+* doc2vec.py - contains a doc2vec model that computes pairwise review similarity
+* scraper.py - contains an asynchronous Yelp scraper that scrapes real reviews from any Yelp business page
+
+### Reference
 Bilmes & Lin (2010)](https://www.aclweb.org/anthology/N10-1134.pdf)
