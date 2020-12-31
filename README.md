@@ -6,9 +6,7 @@
 
 #### *Comes with an asynchronous review scraper!*
 
-### Overview
-
-These tools help you to scrape and summarizes Yelp reviews for any business! Works best if there are at least a few hundred reviews. Note: this is a spin-off from an academic research project: https://github.com/TheShiya/text-summarization-project/
+These tools help you to scrape and summarizes Yelp reviews for any business! Works best if there are at least a few hundred reviews.
 
 ### Usage
 
