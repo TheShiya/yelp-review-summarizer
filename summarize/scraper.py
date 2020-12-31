@@ -1,22 +1,23 @@
-from bs4 import BeautifulSoup
-from typing import List
-import requests
 import asyncio
-import aiohttp
-import ssl
 import re
+from typing import List
+
+import aiohttp
+from bs4 import BeautifulSoup
 
 
 class YelpScraper:
     """
-    Usage:
+    Example usage:
+
+    # This gets the first 2 pages of reviews for Omar's
     url = "https://www.yelp.com/biz/omars-mediterranean-cuisine-new-york-2"
     ys = YelperScraper(url, n_pages=2)
     reviews = ys.scrape()
     """
-    def __init__(self, url: str, n_pages: int):
+
+    def __init__(self, url: str):
         self.url = url
-        self.n_pages = n_pages
         self.reviews = []
 
     @staticmethod
@@ -47,7 +48,7 @@ class YelpScraper:
         return reviews
 
     @staticmethod
-    async def _fetch(session, url):
+    async def _fetch(session: aiohttp.ClientSession, url: str) -> str:
         """
         Asynchronous function to retrieve HTML
         """
@@ -56,9 +57,9 @@ class YelpScraper:
             html = await response.text()
             return html
 
-    async def scrape_func(self) -> List[str]:
+    async def scrape_func(self, n_pages: int):
         urls = [self.url]
-        urls += [self.url + "?start=" + str(i * 20) for i in range(1, self.n_pages)]
+        urls += [f"{self.url}?start={i * 20}" for i in range(1, n_pages)]
         self.reviews = []
         tasks = []
         async with aiohttp.ClientSession() as session:
@@ -68,14 +69,7 @@ class YelpScraper:
             for html in html_list:
                 self.reviews += self._parse_html(html)
 
-    def scrape(self):
+    def scrape(self, n_pages: int = 1) -> List[str]:
         loop = asyncio.get_event_loop()
-        loop.run_until_complete(self.scrape_func())
+        loop.run_until_complete(self.scrape_func(n_pages))
         return self.reviews
-
-
-url = "https://www.yelp.com/biz/omars-mediterranean-cuisine-new-york-2"
-ys = YelpScraper(url, n_pages=2)
-reviews = ys.scrape()
-
-print(reviews)

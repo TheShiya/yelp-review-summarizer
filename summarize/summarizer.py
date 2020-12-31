@@ -1,9 +1,11 @@
-from typing import List
-from nltk.tokenize import word_tokenize
-from doc2vec import Doc2VecModel
-import numpy as np
 import heapq
 import time
+from typing import List
+
+import numpy as np
+from nltk.tokenize import word_tokenize
+
+from summarize.doc2vec import Doc2VecModel
 
 
 def jaccard_index(s: str, t: str) -> float:
@@ -27,12 +29,12 @@ def cost_func(document: str) -> int:
 class Summarizer:
     """
     Overview:
-    An extractive summarizer that uses a lazy greedy algorithm with a max heap to efficiently find the most
+    An extractive summarize that uses a lazy greedy algorithm with a max heap to efficiently find the most
     semantically representative documents from a large corpus of documents.
 
     Example usage:
-    summarizer = Summarizer(['hi there', 'hello how are you'], sim_metric='doc2vec')
-    res = summarizer.summarize(budget=0.1)  # returns document no longer than 10% of total length
+    summarize = Summarizer(['hi there', 'hello how are you'], sim_metric='doc2vec')
+    res = summarize.summarize(budget=0.1)  # returns document no longer than 10% of total length
 
     References:
     1. Lin, Hui, and Jeff Bilmes. "Multi-document summarization via budgeted maximization of submodular functions."
