@@ -1,11 +1,14 @@
 import heapq
 import time
 from typing import List
-
 import numpy as np
-from nltk.tokenize import word_tokenize
-
+import nltk
 from summarize.doc2vec import Doc2VecModel
+
+try:
+    nltk.data.find('tokenizers/punkt')
+except LookupError:
+    nltk.download('punkt')
 
 
 def jaccard_index(s: str, t: str) -> float:
@@ -15,8 +18,8 @@ def jaccard_index(s: str, t: str) -> float:
     :param t: another string
     :return: Jaccard index, a float in [0, 1]
     """
-    s_words = set(word_tokenize(s))
-    t_words = set(word_tokenize(t))
+    s_words = set(nltk.tokenize.word_tokenize(s))
+    t_words = set(nltk.tokenize.word_tokenize(t))
     intersection = s_words.intersection(t_words)
     union = s_words.union(t_words)
     return len(intersection) / len(union)

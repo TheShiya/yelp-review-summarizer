@@ -1,5 +1,4 @@
 from typing import List
-
 import nltk
 import numpy as np
 from gensim.models.doc2vec import TaggedDocument, Doc2Vec

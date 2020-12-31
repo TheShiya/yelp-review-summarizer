@@ -1,7 +1,6 @@
 import asyncio
 import re
 from typing import List
-
 import aiohttp
 from bs4 import BeautifulSoup
 
