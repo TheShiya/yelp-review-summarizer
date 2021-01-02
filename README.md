@@ -1,11 +1,11 @@
-## Yelp Review Summarizer
+## Yelp Food Review Summarizer w/ Lazy Greedy Algorithm
 
 
 <p align="center">
 <img src="banner.png" alt="art" width="630"/>
 </p>
 
-```asychronous web scraping``` ```abstractive summarization``` ```discrete optimization``` ```greedy algorithm``` ```word2vec``` ```doc2vec``` ```text processing```
+```asychronous web scraping```  ```lazy greedy algorithm``` ```doc2vec``` ```discrete optimization``` ```maxheap``` ```abstractive summarization```
 
 
 
