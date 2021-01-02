@@ -5,7 +5,7 @@
 <img src="banner.png" alt="art" width="630"/>
 </p>
 
-```asychronous web scraping```  ```lazy greedy algorithm``` ```doc2vec``` ```discrete optimization``` ```maxheap``` ```abstractive summarization```
+```asychronous web scraping```  ```lazy greedy algorithm``` ```doc2vec``` ```discrete optimization``` ```abstractive summarization```
 
 
 
