@@ -5,7 +5,7 @@
 <img src="banner.png" alt="art" width="630"/>
 </p>
 
-#### *Also comes with an asynchronous review scraper!*
+```asychronous web scraping``` ```abstractive summarization``` ```discrete optimization``` ```greedy algorithm``` ```word2vec``` ```doc2vec``` ```text processing```
 
 
 
